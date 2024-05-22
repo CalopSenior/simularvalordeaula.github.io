@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simular Valor de Aula</title>
+</head>
+<body>
+    
+    <style>
+
+::selection {
+    background-color: #555555;
+    color: #eeeeee;
+}
+
+.formS {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0 5px 15px;
+    & label {
+        width: fit-content;
+        cursor: pointer;
+    }
+}
+
+.appearance-select {
+    -webkit-appearance: none;
+    /* Remove estilo padrão do Chrome */
+    -moz-appearance: none;
+    /* Remove estilo padrão do FireFox */
+    appearance: none;
+    /* Remove estilo padrão do FireFox*/
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;
+    /* Imagem de fundo (Seta) */
+    background-position: 218px center;
+    /*Posição da imagem do background*/
+    width: 250px;
+    /* Tamanho do select, maior que o tamanho da div "div-select" */
+    height: 30px;
+    /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+}     
+#classQ {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: #ddd;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: #838383;
+}
+
+#cost, #costM {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30px;
+    text-align: center;
+    outline: none;
+}
+#desc {
+    font-size: .7em;
+}
+
+    </style>
+
+    <section class="formS">
+
+        <div>
+            <span>Tipo de Aula</span>
+            <select class="appearance-select" id="classT">
+                <option value="24">Aula Individual</option>
+                <option value="16">Aula em Grupo</option>
+            </select>
+        </div>
+
+        <div>
+            <span>Quantidade de Aulas/semana</span>
+            <input type="number" id="classQ" value="2" min="1" max="4">
+        </div>
+
+        <div>
+            <span>Local das Aulas</span>
+            <select class="appearance-select" id="classL">
+                <option value="0">Residência do Professor</option>
+                <option value="1">Residência do Aluno</option>
+            </select>
+        </div>
+
+        <div>
+            <span>Grau de Ensino em Curso</span>
+            <div class="column">
+                <label for="8gd">
+                    <input type="radio" name="studentI" id="8gd" value="5" checked>
+                    <span>8° ano</span>
+                </label>
+                <label for="9gd">
+                    <input type="radio" name="studentI" id="9gd" value="5">
+                    <span>9° ano</span>
+                </label>
+                <label for="1gd">
+                    <input type="radio" name="studentI" id="1gd" value="8">
+                    <span>1° ano médio</span>
+                </label>
+                <label for="2gd">
+                    <input type="radio" name="studentI" id="2gd" value="8">
+                    <span>2° ano médio</span>
+                </label>
+                <label for="3gd">
+                    <input type="radio" name="studentI" id="3gd" value="8">
+                    <span>3° ano médio</span>
+                </label>
+            </div>
+            
+        </div>
+
+        <div>
+            <span>Dificuldades Principais:</span>
+            <div class="column">
+                <label for="s1">
+                    <input class="checkbox-round" type="checkbox" id="s1">
+                    <span>Conjuntos Numéricos</span>
+                </label>
+                <label for="s2">
+                    <input class="checkbox-round" type="checkbox" id="s2">
+                    <span>Equações e Polinômios</span>
+                </label>
+                <label for="s3">
+                    <input class="checkbox-round" type="checkbox" id="s3">
+                    <span>Sistemas de Equações Lineares</span>
+                </label>
+                <label for="s4">
+                    <input class="checkbox-round" type="checkbox" id="s4">
+                    <span>Funções</span>
+                </label>
+                <label for="s5">
+                    <input class="checkbox-round" type="checkbox" id="s5">
+                    <span>Geometria Espacial</span>
+                </label>
+                <label for="s6">
+                    <input class="checkbox-round" type="checkbox" id="s6">
+                    <span>Geometria Plana</span>
+                </label>
+                <label for="s7">
+                    <input class="checkbox-round" type="checkbox" id="s7">
+                    <span>Trigonometria e Números Complexos</span>
+                </label>
+                <label for="s8">
+                    <input class="checkbox-round" type="checkbox" id="s8">
+                    <span>Álgebra e Aritmética Básica</span>
+                </label>
+                <label for="s9">
+                    <input class="checkbox-round" type="checkbox" id="s9">
+                    <span>Interpretação de Problemas</span>
+                </label>
+                <label for="s10">
+                    <input class="checkbox-round" type="checkbox" id="s10">
+                    <span>Cálculo Diferencial</span>
+                </label>
+                <label for="s11">
+                    <input class="checkbox-round" type="checkbox" id="s11">
+                    <span>Limites e Ideia de Infinito</span>
+                </label>
+                <label for="s12">
+                    <input class="checkbox-round" type="checkbox" id="s12">
+                    <span>Vetor</span>
+                </label>
+                <label for="s13">
+                    <input class="checkbox-round" type="checkbox" id="s13">
+                    <span>Matriz e Determinante</span>
+                </label>
+                <label for="s14">
+                    <input class="checkbox-round" type="checkbox" id="s14">
+                    <span>Propriedades Algébricas e Aritméticas</span>
+                </label>
+                <label for="s15">
+                    <input class="checkbox-round" type="checkbox" id="s15">
+                    <span>Matemática Financeira</span>
+                </label>
+                <label for="sO">
+                    <input class="checkbox-round" type="checkbox" id="sO">
+                    <span>Outros</span>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <span>Tipo de Conteúdo</span>
+            <div class="column">
+                <label for="t1" title="O aluno terá acesso ao Drive com PDFs de resumos, exercícios resolvidos e suporte via email ou mensagem">
+                    <input type="radio" name="content" id="t1" value="4" checked>
+                    <span>Material Básico</span>
+                </label>
+                <label for="t2" title="O aluno terá acesso ao Drive com PDFs de resumos e demonstrações dos conteúdos, exercícios resolvidos, vídeos de exercícios e suporte via email ou mensagem">
+                    <input type="radio" name="content" value="10" id="t2">
+                    <span>Material Avançado</span>
+                </label>
+                <label for="t3" title="O aluno terá acesso ao Drive com PDFs de exercícios e vídeos de exercícios, tal como suas resoluções, e suporte via email ou mensagem">
+                    <input type="radio" name="content" value="0" id="t3">
+                    <span>Apenas Exercícios</span>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <span>Valor de R$</span>
+            <input type="text" id="cost" value="0" readonly>
+            <span>por semana</span>
+            <div id="desc">
+                <input type="text" id="costM" value="0" readonly>
+            <span>por mês (você economiza 37,5% por mês)</span>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+
+        const classType = document.getElementById("classT");
+        const classQuant = document.getElementById("classQ");
+        const classLocal = document.getElementById("classL");
+        const studentGrade = document.getElementsByName("studentI");
+        const studentDifi = document.querySelectorAll(".checkbox-round");
+        const studentPlan = document.getElementsByName("content");
+        const costViewer = document.getElementById("cost");
+        const costMViwer = document.getElementById("costM")
+        const getCost = () =>{
+            let cost = +classType.value;
+
+            cost += (cost * (getChecked(studentGrade)[0] != undefined ? +getChecked(studentGrade)[0].value : 0))/100;
+
+            cost += (2 * cost * (getChecked(studentDifi)[0] != undefined ? getChecked(studentDifi).length : 0))/100
+
+            cost += Boolean(+classLocal.value) === true ? cost * 0.15 : 0;
+
+            return Math.round(cost  * parseInt(classQuant.value) + +getChecked(studentPlan)[0].value);
+        };
+        const getChecked = (el) =>{
+            const t = Array.from(el).filter(l => l.checked === true);
+            return t;
+        };
+
+        setInterval(() =>{
+            costViewer.value = getCost();
+            costMViwer.value = Math.round(2.5*getCost());
+        }, 500)
+
+    </script>
+
+</body>
+</html>
